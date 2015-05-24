@@ -54,7 +54,8 @@ function serveStatic(response, cache, absPath) {
   When the call- back executes, the HTTP server will populate these arguments with objects that,
   respectively, allow you to work out the details of the request and send back a response.
  */
-var server = http.createServer(function(request, response) {
+var server = http.createServer(function(request, response) { //Create HTTP server, using anonymous function to define per-request behavior
+
     var filePath = false;
 
     if (request.url == '/') {
