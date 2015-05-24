@@ -21,7 +21,8 @@ function sendFile(response, filePath, fileContents) {
   response.end(fileContents);
 }
 
-/*
+
+ /*
  The next helper determines whether or not a file is cached and, if so, serves it.
  If a file isn’t cached, it’s read from disk and served. If the file doesn’t exist,
  an HTTP 404 error is returned as a response.
@@ -75,4 +76,7 @@ var server = http.createServer(function(request, response) {
 server.listen(3000, function() {
           console.log("Server listening on port 3000.");
 });
+
+var chatServer = require('./lib/chat_server');
+chatServer.listen(server);
 
